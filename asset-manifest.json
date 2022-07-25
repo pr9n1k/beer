@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/beer/static/css/main.3b0f6f0e.css",
-    "main.js": "/beer/static/js/main.6f69ad6d.js",
-    "index.html": "/beer/index.html",
-    "main.3b0f6f0e.css.map": "/beer/static/css/main.3b0f6f0e.css.map",
-    "main.6f69ad6d.js.map": "/beer/static/js/main.6f69ad6d.js.map"
+    "main.css": "https://pr9n1k.github.io/beer/static/css/main.3b0f6f0e.css",
+    "main.js": "https://pr9n1k.github.io/beer/static/js/main.456e0c64.js",
+    "index.html": "https://pr9n1k.github.io/beer/index.html",
+    "main.3b0f6f0e.css.map": "https://pr9n1k.github.io/beer/static/css/main.3b0f6f0e.css.map",
+    "main.456e0c64.js.map": "https://pr9n1k.github.io/beer/static/js/main.456e0c64.js.map"
   },
   "entrypoints": [
     "static/css/main.3b0f6f0e.css",
-    "static/js/main.6f69ad6d.js"
+    "static/js/main.456e0c64.js"
   ]
 }
