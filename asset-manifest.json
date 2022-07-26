@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/beer/static/css/main.3b0f6f0e.css",
-    "main.js": "/beer/static/js/main.6f69ad6d.js",
+    "main.css": "/beer/static/css/main.0189a70e.css",
+    "main.js": "/beer/static/js/main.407afda3.js",
     "index.html": "/beer/index.html",
-    "main.3b0f6f0e.css.map": "/beer/static/css/main.3b0f6f0e.css.map",
-    "main.6f69ad6d.js.map": "/beer/static/js/main.6f69ad6d.js.map"
+    "main.0189a70e.css.map": "/beer/static/css/main.0189a70e.css.map",
+    "main.407afda3.js.map": "/beer/static/js/main.407afda3.js.map"
   },
   "entrypoints": [
-    "static/css/main.3b0f6f0e.css",
-    "static/js/main.6f69ad6d.js"
+    "static/css/main.0189a70e.css",
+    "static/js/main.407afda3.js"
   ]
 }
