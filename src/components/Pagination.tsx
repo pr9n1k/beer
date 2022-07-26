@@ -1,5 +1,7 @@
 import * as React from "react";
 import ReactPaginate from "react-paginate";
+import { LeftArrow } from "../assets/svg/LeftArrow";
+import RightArrow from "../assets/svg/RightArrow";
 import { Beer } from "../types/Beer";
 
 export interface PaginationProps {
@@ -10,21 +12,20 @@ export interface PaginationProps {
 export function Pagination({ beers, setCurrentItems }: PaginationProps) {
   const [pageCount, setPageCount] = React.useState(0);
   const [itemOffset, setItemOffset] = React.useState(0);
-  const itemsPerPage = 25;
+
+  const itemsPerPage = window.innerWidth > 576 ? 5 : 4;
 
   React.useEffect(() => {
+    if (Math.ceil(beers.length / itemsPerPage) !== pageCount) {
+      setItemOffset(0);
+    }
     const endOffset = itemOffset + itemsPerPage;
-    console.log(`Loading items from ${itemOffset} to ${endOffset}`);
     setCurrentItems(beers.slice(itemOffset, endOffset));
     setPageCount(Math.ceil(beers.length / itemsPerPage));
-  }, [beers, itemOffset, setCurrentItems]);
+  }, [beers, itemOffset, pageCount, setCurrentItems]);
 
-  // Invoke when user click to request another page.
   const handlePageClick = (event: { selected: number }) => {
     const newOffset = (event.selected * itemsPerPage) % beers.length;
-    console.log(
-      `User requested page number ${event.selected}, which is offset ${newOffset}`
-    );
     setItemOffset(newOffset);
   };
   if (beers.length <= itemsPerPage) {
@@ -34,11 +35,11 @@ export function Pagination({ beers, setCurrentItems }: PaginationProps) {
     <div className="pagination">
       <ReactPaginate
         breakLabel="..."
-        nextLabel=">"
+        nextLabel={<RightArrow />}
         onPageChange={handlePageClick}
         pageRangeDisplayed={5}
         pageCount={pageCount}
-        previousLabel="<"
+        previousLabel={<LeftArrow />}
       />
     </div>
   );

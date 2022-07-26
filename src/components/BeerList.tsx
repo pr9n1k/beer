@@ -8,12 +8,10 @@ export interface BeerListProps {
 
 export function BeerList({ beers }: BeerListProps) {
   return (
-    <div>
-      <ul className="beer__list">
-        {beers?.map((item) => {
-          return <BeerItem beer={item} key={item.id} />;
-        })}
-      </ul>
-    </div>
+    <ul className="beer__list">
+      {beers?.map((item) => {
+        return <BeerItem beer={item} key={item.id} />;
+      })}
+    </ul>
   );
 }

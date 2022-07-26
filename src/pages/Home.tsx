@@ -13,29 +13,32 @@ export function Home() {
   const [isLoading, setIsLoading] = React.useState<boolean>(false);
   const data = useFetching();
   const searchBeer = useBeer(beer, query);
+
   React.useEffect(() => {
     setIsLoading(true);
     data.then((res) => {
-      console.log(res);
       setBeer(res);
       setIsLoading(false);
     });
   }, []);
+  const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setQuery(e.target.value);
+  };
   if (isLoading) {
     return <h1>Загрузка...</h1>;
   }
   return beer.length ? (
-    <div>
+    <>
       <Input
         type="text"
-        onChange={(e) => setQuery(e.target.value)}
+        onChange={onChange}
         value={query}
         className="beer__search"
         placeholder="Поиск..."
       />
       <BeerList beers={currentItems} />
       <Pagination beers={searchBeer} setCurrentItems={setCurrentItems} />
-    </div>
+    </>
   ) : (
     <h1>Произошла ошибка...</h1>
   );
